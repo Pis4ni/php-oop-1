@@ -21,10 +21,11 @@ class Movie extends Production
 
         $this->published_year = $published_year;
     }
-    public function get_generes($generes){
-        foreach ($generes as $genere){
-            echo $genere
+    public function get_generes(){
+        $full_name = '';
+        foreach ($this->generes->names as $name){
+            $full_name .= $name;
         }
+        return $full_name;
     }
 }
-;

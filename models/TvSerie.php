@@ -28,4 +28,11 @@ class TvSerie extends Production
         $this->aired_from_year = $aired_from_year;
         $this->aired_to_year = $aired_to_year;
     }
+    public function get_generes(){
+        $full_name = '';
+        foreach ($this->generes->names as $name){
+            $full_name .= $name;
+        }
+        return $full_name;
+    }
 }

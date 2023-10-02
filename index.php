@@ -6,7 +6,7 @@ require __DIR__ . '/models/Genere.php';
 require __DIR__ . '/models/TvSerie.php';
 
 $movies = [
-    $Il_Pianeta_del_Tesoro = new Movie(
+    new Movie(
         'Il Pianeta del Tesoro',
         'Ron Clements',
         2002,
@@ -15,7 +15,7 @@ $movies = [
         2002
     ),
 
-    $Interstellar = new Movie(
+    new Movie(
         'Interstellar',
         'Christopher Nolan',
         2014,
@@ -24,7 +24,7 @@ $movies = [
         2014
     ),
 
-    $The_Shawshank_Redemption = new Movie(
+    new Movie(
         'The Shawshank Redemption',
         'Frank Darabont',
         1994,
@@ -33,7 +33,7 @@ $movies = [
         1994
     ),
 
-    $Inception = new Movie(
+    new Movie(
         'Inception',
         'Christopher Nolan',
         2010,
@@ -42,7 +42,7 @@ $movies = [
         2010
     ),
 
-    $The_Dark_Knight = new Movie(
+    new Movie(
         'The Dark Knight',
         'Christopher Nolan',
         2008,
@@ -54,7 +54,7 @@ $movies = [
 ];
 
 $tvSeries = [
-    $breaking_bad = new TvSerie(
+    new TvSerie(
         'Breaking Bad',
         'Vince Gilligan',
         2008,
@@ -65,7 +65,7 @@ $tvSeries = [
         2013
     ),
 
-    $game_of_thrones = new TvSerie(
+    new TvSerie(
         'Game of Thrones',
         'David Benioff, D.B. Weiss',
         2011,
@@ -76,7 +76,7 @@ $tvSeries = [
         2019
     ),
 
-    $stranger_things = new TvSerie(
+    new TvSerie(
         'Stranger Things',
         'The Duffer Brothers',
         2016,
@@ -87,7 +87,7 @@ $tvSeries = [
         2023
     ),
 
-    $friends = new TvSerie(
+    new TvSerie(
         'Friends',
         'David Crane, Marta Kauffman',
         1994,
@@ -98,7 +98,7 @@ $tvSeries = [
         2004
     ),
 
-    $the_crown = new TvSerie(
+    new TvSerie(
         'The Crown',
         'Peter Morgan',
         2016,
@@ -143,6 +143,34 @@ $tvSeries = [
                                 <span class="card-text"> <?php echo ($movie->get_generes()) ?>  </span><br>
                                 <strong class="card-text">Length:</strong>
                                 <span class="card-text"> <?php echo ($movie->length) ?> </span>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php endforeach; ?>
+
+            </div>
+            <div class="row">
+                <?php foreach ($tvSeries as $serie): ?>
+
+                    <div class="col-4">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo ($serie->name) ?></h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo ($serie->author) ?></h6>
+                                <strong class="card-text">Year:</strong>
+                                <span class="card-text"> <?php echo ($serie->year) ?> </span><br>
+                                <strong class="card-text">Generes:</strong>
+                                <span class="card-text"> <?php echo ($serie->get_generes()) ?>  </span><br>
+                                <strong class="card-text">Seasons:</strong>
+                                <span class="card-text"> <?php echo ($serie->number_of_seasons) ?> </span>
+                                <strong class="card-text">Episodes:</strong>
+                                <span class="card-text"> <?php echo ($serie->episodes) ?> </span>
+                                <strong class="card-text">On-Air from:</strong>
+                                <span class="card-text"> <?php echo ($serie->aired_from_year) ?> </span>
+                                <strong class="card-text">On-Air to:</strong>
+                                <span class="card-text"> <?php echo ($serie->aired_to_year) ?> </span>
                             </div>
                         </div>
                     </div>

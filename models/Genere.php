@@ -8,4 +8,6 @@ class Genere
     ) {
         $this->names = $names;
     }
+
+    
 }
