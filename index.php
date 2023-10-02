@@ -1,63 +1,16 @@
 <?php
 
-/*
- * ### Class Movie
- * Define a Class Movie
- * @author
- */
+require __DIR__ . '/models/Production.php';
+require __DIR__ . '/models/Movie.php';
+require __DIR__ . '/models/Genere.php';
+require __DIR__ . '/models/TvSerie.php';
 
-class Movie
-{
-    public $name;
-    public $author;
-    public $year;
-    public $generes;
-
-    public function __construct(
-        string $name,
-        string $author,
-        int $year,
-        // * oggetto di tipo 'Genere'
-        Genere $genere,
-    ) {
-        $this->name = $name;
-        $this->author = $author;
-        $this->year = $year;
-        $this->generes = $genere;
-
-    }
-
-    public function printAllInfo()
-    { /* calcolo */
-        $all_infos = ($this->name . $this->author . $this->year);
-        return $all_infos;
-    }
-}
-;
-
-
-class Genere
-{
-    public $name;
-
-    public function __construct(
-        $name
-    ) {
-        $this->name = $name;
-    }
-}
-
-
-
-
-
-
-
-$il_pianeta_del_tesoro_genere = new Genere('avventura');
-$il_pianeta_del_tesoro = new Movie('il_pianeta_del_tesoro', 'Ron Clements', 2002, $il_pianeta_del_tesoro_genere);
-
-$naruto_genere = new Genere('anime');
-$naruto = new Movie('naruto', 'nakamoto', 1999, $naruto_genere);
+$il_pianeta_del_tesoro_generes[] = new Genere('avventura');
+$il_pianeta_del_tesoro_generes[] = new Genere('fantascienza');
+$il_pianeta_del_tesoro = new Movie('il Pianeta del Tesoro', 'Ron Clements', 2002, $il_pianeta_del_tesoro_generes,120);
+$naruto_generes[] = new Genere('shonen');
+$naruto_generes[] = new Genere('anime');
+$naruto = new TvSerie('Naruto', 'Nakamoto', 2002, $naruto_generes, 500);
 ?>
 
 <!DOCTYPE html>
@@ -68,9 +21,11 @@ $naruto = new Movie('naruto', 'nakamoto', 1999, $naruto_genere);
     <title>Document</title>
 </head>
 <body>
-    <?php var_dump($il_pianeta_del_tesoro_genere)?>
-    <?php var_dump($il_pianeta_del_tesoro)?>
-    <?php var_dump($naruto_genere)?>
+    <?php var_dump($il_pianeta_del_tesoro) ?>
+    <?= '<hr>' ?>
     <?php var_dump($naruto)?>
+    <?= '<hr>' ?>
+
+
 </body>
 </html>
