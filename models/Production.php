@@ -10,7 +10,7 @@ class Production
         string $name,
         string $author,
         int $year,
-        array $generes,
+        Genere $generes,
     ) {
         $this->set_name($name);
         $this->set_author($author);
@@ -31,7 +31,10 @@ class Production
         $this->year = $year;
     }
     public function set_generes($generes){
-        if (empty($generes))return false;
+        
+        // todo controllo diverso devo fare una verifica sul tipo di genere che deve essere appunto di tipo Genere
+        
+        // if (($generes))return false;
         $this->generes = $generes;
     }
     public function printDetails()

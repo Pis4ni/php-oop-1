@@ -1,11 +1,11 @@
 <?php
 class Genere
 {
-    public $name;
+    public $names;
 
     public function __construct(
-        $name
+        array $names
     ) {
-        $this->name = $name;
+        $this->names = $names;
     }
 }

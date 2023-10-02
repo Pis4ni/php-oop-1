@@ -6,18 +6,25 @@ class Movie extends Production
     public $year;
     public $generes;
     public $length;
-    
+    public $published_year;
 
     public function __construct(
         string $name,
         string $author,
         int $year,
-        array $generes,
+        Genere $generes,
         int $length,
+        int $published_year,
     ) {
         parent::__construct($name,$author,$year,$generes);
-        $this->$length = $length;
+        $this->length = $length;
+
+        $this->published_year = $published_year;
     }
-    
+    public function get_generes($generes){
+        foreach ($generes as $genere){
+            echo $genere
+        }
+    }
 }
 ;
